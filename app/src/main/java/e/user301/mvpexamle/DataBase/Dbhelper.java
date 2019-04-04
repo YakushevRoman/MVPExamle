@@ -8,7 +8,7 @@ import e.user301.mvpexamle.Common.UserTable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public static final String NAME = "database.db";
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
     public Dbhelper(Context context) {
         super(context, NAME, null, VERSION);
     }

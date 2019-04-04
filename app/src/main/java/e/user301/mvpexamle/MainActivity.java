@@ -25,5 +25,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SingleActivity.class));
             }
         });
+
+        rButtonMVP = findViewById(R.id.button_mvp);
+        rButtonMVP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MVPActivity.class));
+            }
+        });
     }
 }

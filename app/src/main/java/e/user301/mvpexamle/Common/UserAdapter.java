@@ -2,6 +2,7 @@ package e.user301.mvpexamle.Common;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 import e.user301.mvpexamle.R;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
+    public static final String TAG = "UserAdapter";
     List <User> rUsers;
 
     public UserAdapter() {
@@ -29,6 +31,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserHolder> {
     @Override
     public void onBindViewHolder(@NonNull UserHolder userHolder, int i) {
         userHolder.bind(rUsers.get(i));
+    }
+
+    public void setData(List<User> rUsers){
+        this.rUsers.clear();
+        this.rUsers.addAll(rUsers);
+        notifyDataSetChanged();
+        Log.d(TAG, "setData: " + rUsers.size());
+
     }
 
     @Override
